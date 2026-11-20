@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Diar Salem – Villas de luxe avec piscine privée à Djerba, Tunisie. Location de villas méditerranéennes.">
+    <meta name="theme-color" content="#162026">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Diar Salem – Villas de Luxe à Djerba</title>
+
+    <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans & Cairo (Arabic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS CDN & Custom Mediterranean Theme -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        limestone: '#FAF7F2',
+                        sand: '#F2EBE1',
+                        sandDeep: '#E6DCCD',
+                        cypress: '#162026',
+                        cypressLight: '#1E2C34',
+                        terracotta: '#C46D45',
+                        terracottaHover: '#A85733',
+                        cobalt: '#146C94',
+                        ink: '#1F2933',
+                        muted: '#5C6770'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+                        arabic: ['"Cairo"', 'sans-serif']
+                    },
+                    boxShadow: {
+                        editorial: '0 20px 50px -15px rgba(22, 32, 38, 0.14)',
+                        card: '0 10px 30px -10px rgba(22, 32, 38, 0.08)',
+                        glow: '0 10px 25px -5px rgba(196, 109, 69, 0.4)'
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        /* Arabic Typography Override */
+        [lang="ar"] body,
+        [lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3, [lang="ar"] h4,
+        [lang="ar"] p, [lang="ar"] a, [lang="ar"] button, [lang="ar"] span, [lang="ar"] input, [lang="ar"] select {
+            font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Adaptive Top App Bar — Deep Frosted Mediterranean Cypress */
+        #navbar {
+            padding-top: env(safe-area-inset-top);
+            background: linear-gradient(to bottom, rgba(22, 32, 38, 0.85) 0%, rgba(22, 32, 38, 0.25) 65%, rgba(22, 32, 38, 0) 100%);
+            border-bottom: 1px solid transparent;
+            transition: background-color 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+        }
+        #navbar .nav-brand-text {
+            color: #FAF7F2;
+            transition: color 0.3s ease;
+        }
+        #navbar .nav-link {
+            position: relative;
+            color: rgba(250, 247, 242, 0.85);
+            transition: color 0.3s ease;
+        }
+        #navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 1.5px;
+            background-color: #C46D45;
+            border-radius: 999px;
+            transition: width 0.25s ease;
+        }
+        [dir="rtl"] #navbar .nav-link::after {
+            left: auto;
+            right: 0;
+        }
+        #navbar .nav-link:hover {
+            color: #FFFFFF;
+        }
+        #navbar .nav-link:hover::after {
+            width: 100%;
+        }
+        #navbar .lang-pill {
+            background-color: rgba(250, 247, 242, 0.1);
+            border-color: rgba(250, 247, 242, 0.18);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        #navbar .lang-btn {
+            color: rgba(250, 247, 242, 0.78);
+        }
+        #navbar .lang-btn:hover {
+            color: #FFFFFF;
+        }
+        #navbar .lang-btn.active {
+            background-color: #C46D45;
+            color: #FFFFFF;
+            box-shadow: 0 2px 10px rgba(196, 109, 69, 0.35);
+        }
+        #navbar .mobile-menu-btn {
+            background-color: rgba(250, 247, 242, 0.1);
+            border-color: rgba(250, 247, 242, 0.22);
+            color: #FAF7F2;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+        #navbar .mobile-menu-btn:hover {
+            background-color: rgba(196, 109, 69, 0.22);
+            border-color: rgba(196, 109, 69, 0.55);
+        }
+
+        /* Scrolled State: Rich Frosted Cypress Glass with Subtle Terracotta Hairline */
+        #navbar.is-scrolled {
+            background: rgba(22, 32, 38, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom-color: rgba(196, 109, 69, 0.28);
+            box-shadow: 0 12px 32px rgba(15, 23, 28, 0.22);
+        }
+        #navbar.is-scrolled .lang-pill {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.14);
+        }
+        #navbar.is-scrolled .mobile-menu-btn {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.16);
+            color: #FAF7F2;
+        }
+
+        /* Architectural Burger Button Lines */
+        .burger-lines {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 4.5px;
+            width: 17px;
+        }
+        [dir="rtl"] .burger-lines {
+            align-items: flex-start;
+        }
+        .burger-line {
+            display: block;
+            height: 1.75px;
+            border-radius: 999px;
+            background-color: currentColor;
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease, width 0.3s ease;
+        }
+        .burger-line-1 { width: 17px; }
+        .burger-line-2 { width: 12px; }
+        .burger-line-3 { width: 15px; }
+
+        /* Slide-Over Mobile Drawer (RTL-Aware) */
+        #mobileDrawerPanel {
+            transform: translateX(100%);
+            transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        [dir="rtl"] #mobileDrawerPanel {
+            transform: translateX(-100%);
+        }
+        #mobileDrawer.is-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #mobileDrawer.is-open #mobileDrawerPanel {
+            transform: translateX(0);
+        }
+
+        /* Drawer Language Buttons */
+        .drawer-lang-btn {
+            color: #5C6770;
+        }
+        .drawer-lang-btn.active {
+            background-color: #C46D45;
+            color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(196, 109, 69, 0.28);
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Carousel Track & Smooth Snap */
+        .carousel-track {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .carousel-slide {
+            scroll-snap-align: start;
+        }
+        .gallery-card img {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Desktop Grid Collapse Limit (Mobile Carousel Always Shows All Slides) */
+        @media (min-width: 768px) {
+            .md-grid-collapsed {
+                display: none !important;
+            }
+        }
+
+        /* Compact Dark Date Inputs for iOS & Desktop */
+        input[type="date"],
+        select {
+            color-scheme: dark;
+            -webkit-appearance: none;
+            appearance: none;
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
+        }
+        input[type="date"]::-webkit-date-and-time-value {
+            text-align: left;
+            margin: 0;
+        }
+        [dir="rtl"] input[type="date"]::-webkit-date-and-time-value {
+            text-align: right;
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            cursor: pointer;
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator:hover {
+            opacity: 1;
+        }
+
+        /* Prevent Horizontal Overflow without breaking window.scrollY */
+        html, body {
+            overflow-x: clip;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Hide Scrollbar on Horizontal Strips */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Safe Area Support for Floating & Modal Controls on iOS */
+        #backToTop {
+            bottom: calc(1.25rem + env(safe-area-inset-bottom));
+        }
+        #lightbox {
+            padding-top: calc(1rem + env(safe-area-inset-top));
+            padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+        }
+    </style>
+</head>
+<body class="bg-limestone text-ink font-sans antialiased selection:bg-terracotta selection:text-white">
+
+    <!-- Top Scroll Sentinel for Reliable Navbar State Detection -->
+    <div id="navSentinel" class="absolute top-0 left-0 w-full h-10 pointer-events-none" aria-hidden="true"></div>
+
+    <!-- ==================== 1. FLOATING NAVBAR ==================== -->
+    <header id="navbar" class="fixed top-0 inset-x-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center gap-2 sm:gap-2.5 group shrink-0">
+                <span class="w-8 h-8 rounded-full border border-terracotta/70 flex items-center justify-center text-terracotta text-xs font-serif font-semibold group-hover:bg-terracotta group-hover:text-white transition-colors">DS</span>
+                <span class="nav-brand-text font-serif text-xl sm:text-3xl font-semibold tracking-wide whitespace-nowrap">
+                    Diar <span class="text-terracotta italic">Salem</span>
+                </span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
+                <a href="#hero" class="nav-link text-sm font-medium" data-i18n="nav_home">Accueil</a>
+                <a href="#about" class="nav-link text-sm font-medium" data-i18n="nav_about">À propos</a>
+                <a href="#gallery" class="nav-link text-sm font-medium" data-i18n="nav_gallery">Galerie</a>
+                <a href="#features" class="nav-link text-sm font-medium" data-i18n="nav_features">Équipements</a>
+                <a href="#location" class="nav-link text-sm font-medium" data-i18n="nav_location">Localisation</a>
+                <a href="#contact" class="nav-link text-sm font-medium" data-i18n="nav_contact">Contact</a>
+            </nav>
+
+            <!-- Right Controls: Language Switcher & Architectural Burger Button -->
+            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+                <div class="lang-pill flex items-center backdrop-blur-md border rounded-full p-0.5 sm:p-1" role="group" aria-label="Langue">
+                    <button type="button" class="lang-btn active px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold transition-all cursor-pointer" data-lang="fr">FR</button>
+                    <button type="button" class="lang-btn px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold transition-all cursor-pointer" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold transition-all cursor-pointer" data-lang="ar">عربي</button>
+                </div>
+
+                <button id="menuToggle" type="button" class="mobile-menu-btn lg:hidden w-10 h-10 sm:w-11 sm:h-11 rounded-full border backdrop-blur-md flex items-center justify-center cursor-pointer active:scale-95 transition-transform" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileDrawer">
+                    <span class="burger-lines" aria-hidden="true">
+                        <span class="burger-line burger-line-1"></span>
+                        <span class="burger-line burger-line-2"></span>
+                        <span class="burger-line burger-line-3"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== REDESIGNED LUXURY SLIDE-OVER MOBILE DRAWER ==================== -->
+    <div id="mobileDrawer" class="fixed inset-0 z-[70] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+        <!-- Frosted Backdrop (Click to Close) -->
+        <div id="mobileDrawerBackdrop" class="absolute inset-0 bg-cypress/65 backdrop-blur-sm"></div>
+
+        <!-- Slide-Over Architectural Limestone Sheet -->
+        <aside id="mobileDrawerPanel" class="absolute top-0 right-0 rtl:right-auto rtl:left-0 h-full w-[85vw] max-w-[340px] bg-limestone text-cypress shadow-2xl border-l rtl:border-l-0 rtl:border-r border-sandDeep flex flex-col justify-between">
+            <!-- Top Header -->
+            <div class="px-5 pt-4 pb-4 border-b border-sandDeep/80 flex items-center justify-between">
+                <a href="#hero" class="mobile-link flex items-center gap-2.5">
+                    <span class="w-8 h-8 rounded-full bg-terracotta/12 border border-terracotta/40 flex items-center justify-center text-terracotta text-xs font-serif font-semibold">DS</span>
+                    <div>
+                        <span class="block font-serif text-xl font-semibold leading-none text-cypress">Diar <span class="text-terracotta italic">Salem</span></span>
+                        <span class="block text-[10px] uppercase tracking-[0.2em] text-muted mt-0.5" data-i18n="hero_badge">Djerba, Tunisie</span>
+                    </div>
+                </a>
+
+                <button id="drawerClose" type="button" aria-label="Fermer le menu" class="w-9 h-9 rounded-full bg-sand hover:bg-sandDeep border border-sandDeep text-cypress flex items-center justify-center transition-colors cursor-pointer active:scale-95">
+                    <i class="fas fa-times text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Middle Navigation Links -->
+            <nav class="flex-1 overflow-y-auto px-4 py-4" aria-label="Menu mobile">
+                <ul class="space-y-1">
+                    <li>
+                        <a href="#hero" class="mobile-link group flex items-center justify-between px-3 py-2.5 rounded-xl text-cypress hover:bg-sand/80 hover:text-terracotta transition-colors">
+                            <span class="flex items-center gap-3.5">
+                                <span class="w-9 h-9 rounded-xl bg-sand border border-sandDeep/80 text-terracotta group-hover:bg-terracotta group-hover:text-white group-hover:border-terracotta flex items-center justify-center text-sm transition-colors">
+                                    <i class="fas fa-house"></i>
+                                </span>
+                                <span class="text-[15px] font-medium" data-i18n="nav_home">Accueil</span>
+                            </span>
+                            <i class="fas fa-chevron-right rtl:rotate-180 text-[11px] text-muted/50 group-hover:text-terracotta group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-all"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" class="mobile-link group flex items-center justify-between px-3 py-2.5 rounded-xl text-cypress hover:bg-sand/80 hover:text-terracotta transition-colors">
+                            <span class="flex items-center gap-3.5">
+                                <span class="w-9 h-9 rounded-xl bg-sand border border-sandDeep/80 text-terracotta group-hover:bg-terracotta group-hover:text-white group-hover:border-terracotta flex items-center justify-center text-sm transition-colors">
+                                    <i class="fas fa-compass"></i>
+                                </span>
+                                <span class="text-[15px] font-medium" data-i18n="nav_about">À propos</span>
+                            </span>
+                            <i class="fas fa-chevron-right rtl:rotate-180 text-[11px] text-muted/50 group-hover:text-terracotta group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-all"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#gallery" class="mobile-link group flex items-center justify-between px-3 py-2.5 rounded-xl text-cypress hover:bg-sand/80 hover:text-terracotta transition-colors">
+                            <span class="flex items-center gap-3.5">
+                                <span class="w-9 h-9 rounded-xl bg-sand border border-sandDeep/80 text-terracotta group-hover:bg-terracotta group-hover:text-white group-hover:border-terracotta flex items-center justify-center text-sm transition-colors">
+                                    <i class="fas fa-images"></i>
+                                </span>
+                                <span class="text-[15px] font-medium" data-i18n="nav_gallery">Galerie</span>
+                            </span>
+                            <i class="fas fa-chevron-right rtl:rotate-180 text-[11px] text-muted/50 group-hover:text-terracotta group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-all"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#features" class="mobile-link group flex items-center justify-between px-3 py-2.5 rounded-xl text-cypress hover:bg-sand/80 hover:text-terracotta transition-colors">
+                            <span class="flex items-center gap-3.5">
+                                <span class="w-9 h-9 rounded-xl bg-sand border border-sandDeep/80 text-terracotta group-hover:bg-terracotta group-hover:text-white group-hover:border-terracotta flex items-center justify-center text-sm transition-colors">
+                                    <i class="fas fa-gem"></i>
+                                </span>
+                                <span class="text-[15px] font-medium" data-i18n="nav_features">Équipements</span>
+                            </span>
+                            <i class="fas fa-chevron-right rtl:rotate-180 text-[11px] text-muted/50 group-hover:text-terracotta group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-all"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#location" class="mobile-link group flex items-center justify-between px-3 py-2.5 rounded-xl text-cypress hover:bg-sand/80 hover:text-terracotta transition-colors">
+                            <span class="flex items-center gap-3.5">
+                                <span class="w-9 h-9 rounded-xl bg-sand border border-sandDeep/80 text-terracotta group-hover:bg-terracotta group-hover:text-white group-hover:border-terracotta flex items-center justify-center text-sm transition-colors">
+                                    <i class="fas fa-location-dot"></i>
+                                </span>
+                                <span class="text-[15px] font-medium" data-i18n="nav_location">Localisation</span>
+                            </span>
+                            <i class="fas fa-chevron-right rtl:rotate-180 text-[11px] text-muted/50 group-hover:text-terracotta group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-all"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="mobile-link group flex items-center justify-between px-3 py-2.5 rounded-xl text-cypress hover:bg-sand/80 hover:text-terracotta transition-colors">
+                            <span class="flex items-center gap-3.5">
+                                <span class="w-9 h-9 rounded-xl bg-sand border border-sandDeep/80 text-terracotta group-hover:bg-terracotta group-hover:text-white group-hover:border-terracotta flex items-center justify-center text-sm transition-colors">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <span class="text-[15px] font-medium" data-i18n="nav_contact">Contact</span>
+                            </span>
+                            <i class="fas fa-chevron-right rtl:rotate-180 text-[11px] text-muted/50 group-hover:text-terracotta group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-all"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Language Switcher inside Drawer -->
+                <div class="mt-5 pt-4 border-t border-sandDeep/80">
+                    <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-muted mb-2.5" data-i18n="drawer_lang">Langue</span>
+                    <div class="grid grid-cols-3 gap-1.5 bg-sand border border-sandDeep rounded-xl p-1">
+                        <button type="button" class="drawer-lang-btn lang-btn active py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer" data-lang="fr">Français</button>
+                        <button type="button" class="drawer-lang-btn lang-btn py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer" data-lang="en">English</button>
+                        <button type="button" class="drawer-lang-btn lang-btn py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer" data-lang="ar">العربية</button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Bottom Booking CTA & Direct Channels -->
+            <div class="px-5 pt-4 pb-6 bg-sand/75 border-t border-sandDeep">
+                <a href="#contact" class="mobile-link w-full h-11 rounded-xl bg-terracotta hover:bg-terracottaHover text-white text-xs font-semibold tracking-wide flex items-center justify-center gap-2 shadow-glow transition-all mb-3">
+                    <i class="fab fa-whatsapp text-sm"></i>
+                    <span data-i18n="drawer_cta">Réserver votre séjour</span>
+                </a>
+                <div class="grid grid-cols-3 gap-2">
+                    <a href="https://wa.me/216XXXXXXXX" target="_blank" rel="noopener" class="h-9 rounded-lg bg-limestone border border-sandDeep text-cypress hover:border-terracotta hover:text-terracotta flex items-center justify-center gap-1.5 text-[11px] font-semibold transition-colors">
+                        <i class="fab fa-whatsapp text-[#25D366]"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="mailto:contact@diarsalem.com" class="h-9 rounded-lg bg-limestone border border-sandDeep text-cypress hover:border-terracotta hover:text-terracotta flex items-center justify-center gap-1.5 text-[11px] font-semibold transition-colors">
+                        <i class="fas fa-envelope text-terracotta"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://m.me/diarsalem" target="_blank" rel="noopener" class="h-9 rounded-lg bg-limestone border border-sandDeep text-cypress hover:border-terracotta hover:text-terracotta flex items-center justify-center gap-1.5 text-[11px] font-semibold transition-colors">
+                        <i class="fab fa-facebook-messenger text-[#0084FF]"></i>
+                        <span>Chat</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- ==================== 2. FULL-BLEED EDITORIAL HERO ==================== -->
+    <section id="hero" class="relative min-h-[82svh] sm:min-h-[90svh] flex flex-col justify-center items-center pt-24 pb-16 sm:pb-20 overflow-hidden bg-cypress">
+        <div class="absolute inset-0 z-0">
+            <img
+                src="images/exterior/pool-reflection.jpg"
+                alt="Diar Salem – Piscine privée à Djerba"
+                class="w-full h-full object-cover object-center scale-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-b from-cypress/80 via-cypress/45 to-cypress/90"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-cobalt/20 via-transparent to-terracotta/15"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sand text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] mb-5 sm:mb-6">
+                <i class="fas fa-location-dot text-terracotta"></i>
+                <span data-i18n="hero_badge">Djerba, Tunisie</span>
+            </div>
+
+            <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-semibold text-white leading-[1.05] tracking-tight mb-4 sm:mb-5">
+                <span data-i18n="hero_title_1">Bienvenue à</span>
+                <span class="block text-sand italic font-normal mt-1">Diar <span class="text-terracotta font-semibold not-italic">Salem</span></span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-sm sm:text-lg text-white/85 font-light leading-relaxed mb-7 sm:mb-9" data-i18n="hero_desc">
+                Votre résidence de vacances à Djerba. 6 villas de luxe avec piscine privée, au cœur de l'île aux mille charmes.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <a href="#gallery" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-terracotta hover:bg-terracottaHover text-white text-sm font-semibold tracking-wide transition-all shadow-glow hover:-translate-y-0.5">
+                    <i class="fas fa-compass text-xs"></i>
+                    <span data-i18n="hero_cta">Découvrir</span>
+                </a>
+                <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm font-semibold tracking-wide transition-all hover:-translate-y-0.5">
+                    <i class="fas fa-envelope text-xs"></i>
+                    <span data-i18n="hero_contact">Nous contacter</span>
+                </a>
+            </div>
+        </div>
+
+        <a href="#stats" aria-label="Défiler vers le bas" class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-white/60 hover:text-terracotta transition-colors animate-bounce">
+            <i class="fas fa-chevron-down text-base"></i>
+        </a>
+    </section>
+
+    <!-- ==================== 2B. 4 HORIZONTAL ROUND MEDALLION HIGHLIGHTS ==================== -->
+    <section id="stats" class="py-10 sm:py-14 bg-limestone border-b border-sandDeep/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="flex md:grid md:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto no-scrollbar py-2 px-1 snap-x snap-mandatory justify-start md:justify-items-center">
+                <!-- Medallion 1: 6 Private Villas -->
+                <div class="snap-center shrink-0 w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-white border border-sandDeep shadow-card hover:shadow-editorial hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center p-4 relative reveal">
+                    <div class="absolute inset-2 rounded-full border border-dashed border-sandDeep/80 pointer-events-none"></div>
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-terracotta/12 text-terracotta flex items-center justify-center font-serif text-xl sm:text-2xl font-bold mb-1.5">6</div>
+                    <h3 class="font-serif text-base sm:text-lg font-semibold text-cypress leading-tight" data-i18n="stat_villas">Villas Privées</h3>
+                    <p class="text-[10px] sm:text-[11px] text-muted mt-0.5 leading-tight" data-i18n="stat_villas_sub">Résidence à Djerba</p>
+                </div>
+
+                <!-- Medallion 2: Pre-stay Cleaning -->
+                <div class="snap-center shrink-0 w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-white border border-sandDeep shadow-card hover:shadow-editorial hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center p-4 relative reveal">
+                    <div class="absolute inset-2 rounded-full border border-dashed border-sandDeep/80 pointer-events-none"></div>
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-terracotta/12 text-terracotta flex items-center justify-center text-sm sm:text-base mb-1.5">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-lg font-semibold text-cypress leading-tight" data-i18n="stat_clean">Nettoyage Complet</h3>
+                    <p class="text-[10px] sm:text-[11px] text-muted mt-0.5 leading-tight" data-i18n="stat_clean_sub">Avant chaque séjour</p>
+                </div>
+
+                <!-- Medallion 3: Pool & Garden Maintenance -->
+                <div class="snap-center shrink-0 w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-white border border-sandDeep shadow-card hover:shadow-editorial hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center p-4 relative reveal">
+                    <div class="absolute inset-2 rounded-full border border-dashed border-sandDeep/80 pointer-events-none"></div>
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-terracotta/12 text-terracotta flex items-center justify-center text-sm sm:text-base mb-1.5">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-lg font-semibold text-cypress leading-tight" data-i18n="stat_maint">Entretien Inclus</h3>
+                    <p class="text-[10px] sm:text-[11px] text-muted mt-0.5 leading-tight" data-i18n="stat_maint_sub">Piscine & jardin</p>
+                </div>
+
+                <!-- Medallion 4: Rechargeable Wi-Fi -->
+                <div class="snap-center shrink-0 w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-white border border-sandDeep shadow-card hover:shadow-editorial hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center p-4 relative reveal">
+                    <div class="absolute inset-2 rounded-full border border-dashed border-sandDeep/80 pointer-events-none"></div>
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-terracotta/12 text-terracotta flex items-center justify-center text-sm sm:text-base mb-1.5">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-lg font-semibold text-cypress leading-tight" data-i18n="stat_wifi">Wi-Fi Rechargeable</h3>
+                    <p class="text-[10px] sm:text-[11px] text-muted mt-0.5 leading-tight" data-i18n="stat_wifi_sub">Recharge à la demande</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. ABOUT / L'EXPÉRIENCE SECTION ==================== -->
+    <section id="about" class="py-14 sm:py-24 bg-limestone">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+                <!-- Left: Asymmetric Editorial Framed Image + Overlapping Accent Card -->
+                <div class="lg:col-span-6 relative pb-10 sm:pb-16 reveal">
+                    <div class="relative rounded-3xl overflow-hidden shadow-editorial border border-sandDeep bg-sand aspect-[4/5] sm:aspect-[5/6] max-w-md mx-auto lg:mx-0">
+                        <img
+                            src="images/exterior/exterior-facade.jpg"
+                            alt="Diar Salem – Façade en pierre naturelle"
+                            loading="lazy"
+                            class="w-full h-full object-cover"
+                        >
+                        <div class="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-3xl pointer-events-none"></div>
+                    </div>
+
+                    <div class="absolute bottom-0 right-2 rtl:right-auto rtl:left-2 sm:right-6 lg:-right-4 rtl:lg:right-auto rtl:lg:-left-4 w-36 sm:w-60 rounded-2xl overflow-hidden shadow-editorial border-4 border-limestone bg-sand">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img
+                                src="images/exterior/terrace-close.jpg"
+                                alt="Diar Salem – Salon extérieur"
+                                loading="lazy"
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="bg-limestone px-3 py-2 flex items-center justify-between">
+                            <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-cypress" data-i18n="about_badge_card">Art de vivre</span>
+                            <span class="w-2 h-2 rounded-full bg-terracotta"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Editorial Story & Highlight Chips -->
+                <div class="lg:col-span-6 reveal">
+                    <div class="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-terracotta mb-3">
+                        <span class="w-8 h-[1px] bg-terracotta"></span>
+                        <span data-i18n="about_subtitle">L'Expérience</span>
+                    </div>
+
+                    <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-cypress leading-tight mb-5" data-i18n="about_title">
+                        L'élégance méditerranéenne au cœur de Djerba
+                    </h2>
+
+                    <p class="text-muted text-sm sm:text-base leading-relaxed mb-4" data-i18n="about_desc_1">
+                        Diar Salem est une résidence de vacances composée de 6 villas de standing, située sur la magnifique île de Djerba. Inspirées du style méditerranéen et du charme djerbien, nos villas vous offrent un cadre idéal pour des vacances en famille ou entre amis.
+                    </p>
+                    <p class="text-muted text-sm sm:text-base leading-relaxed mb-7" data-i18n="about_desc_2">
+                        Chaque villa dispose de 2 chambres spacieuses, une piscine privée avec cascade, un espace barbecue, une terrasse avec salon extérieur, un garage, et une cuisine entièrement équipée.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-2.5 sm:gap-3.5">
+                        <div class="flex items-center gap-2.5 sm:gap-3.5 p-3 sm:p-4 rounded-2xl bg-sand/70 border border-sandDeep/80">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-cobalt/10 text-cobalt flex items-center justify-center shrink-0 text-xs sm:text-sm">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-semibold text-cypress leading-snug" data-i18n="about_h_1">Piscine privée avec cascade</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 sm:gap-3.5 p-3 sm:p-4 rounded-2xl bg-sand/70 border border-sandDeep/80">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-terracotta/10 text-terracotta flex items-center justify-center shrink-0 text-xs sm:text-sm">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-semibold text-cypress leading-snug" data-i18n="about_h_2">2 chambres spacieuses</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 sm:gap-3.5 p-3 sm:p-4 rounded-2xl bg-sand/70 border border-sandDeep/80">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-terracotta/10 text-terracotta flex items-center justify-center shrink-0 text-xs sm:text-sm">
+                                <i class="fas fa-fire-burner"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-semibold text-cypress leading-snug" data-i18n="about_h_3">Espace barbecue</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 sm:gap-3.5 p-3 sm:p-4 rounded-2xl bg-sand/70 border border-sandDeep/80">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-cobalt/10 text-cobalt flex items-center justify-center shrink-0 text-xs sm:text-sm">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-semibold text-cypress leading-snug" data-i18n="about_h_4">Cuisine entièrement équipée</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 sm:gap-3.5 p-3 sm:p-4 rounded-2xl bg-sand/70 border border-sandDeep/80">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-terracotta/10 text-terracotta flex items-center justify-center shrink-0 text-xs sm:text-sm">
+                                <i class="fas fa-couch"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-semibold text-cypress leading-snug" data-i18n="about_h_5">Terrasse & salon extérieur</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 sm:gap-3.5 p-3 sm:p-4 rounded-2xl bg-sand/70 border border-sandDeep/80">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-cypress/10 text-cypress flex items-center justify-center shrink-0 text-xs sm:text-sm">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-semibold text-cypress leading-snug" data-i18n="about_h_6">Garage privé</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. GALLERY (MOBILE CAROUSEL / LAPTOP GRID) ==================== -->
+    <section id="gallery" class="py-12 sm:py-20 bg-white border-y border-sandDeep/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <!-- Header & Desktop Count Badge -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8 reveal">
+                <div>
+                    <div class="inline-flex items-center gap-2.5 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.24em] text-terracotta mb-2">
+                        <span class="w-6 h-[1px] bg-terracotta"></span>
+                        <span data-i18n="gallery_subtitle">Galerie</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-cypress" data-i18n="gallery_title">Visite virtuelle</h2>
+                    <p class="text-muted text-xs sm:text-sm mt-1 max-w-xl" data-i18n="gallery_tap_hint">Faites glisser pour explorer et touchez une photo pour l'agrandir.</p>
+                </div>
+
+                <!-- Desktop Photo Count Pill -->
+                <div class="hidden md:flex items-center gap-2">
+                    <span id="galleryDesktopCount" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-limestone border border-sandDeep text-xs font-semibold text-cypress">
+                        <i class="fas fa-images text-terracotta"></i>
+                        <span id="galleryDesktopCountText">47 photos</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Compact Filter Pills Matching Your Image Subfolders -->
+            <div class="flex items-center gap-2 mb-5 sm:mb-7 overflow-x-auto no-scrollbar pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap reveal" role="tablist" aria-label="Filtrer la galerie">
+                <button type="button" class="filter-btn active shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-cypress text-white border border-cypress cursor-pointer" data-filter="all" data-i18n="filter_all">Tout</button>
+                <button type="button" class="filter-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-limestone text-muted border border-sandDeep hover:border-terracotta hover:text-terracotta cursor-pointer" data-filter="exterior" data-i18n="filter_exterior">Extérieur & Piscine</button>
+                <button type="button" class="filter-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-limestone text-muted border border-sandDeep hover:border-terracotta hover:text-terracotta cursor-pointer" data-filter="living" data-i18n="filter_living">Salon</button>
+                <button type="button" class="filter-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-limestone text-muted border border-sandDeep hover:border-terracotta hover:text-terracotta cursor-pointer" data-filter="dining" data-i18n="filter_dining">Salle à manger</button>
+                <button type="button" class="filter-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-limestone text-muted border border-sandDeep hover:border-terracotta hover:text-terracotta cursor-pointer" data-filter="kitchen" data-i18n="filter_kitchen">Cuisine</button>
+                <button type="button" class="filter-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-limestone text-muted border border-sandDeep hover:border-terracotta hover:text-terracotta cursor-pointer" data-filter="master" data-i18n="filter_master">Chambre Principale</button>
+                <button type="button" class="filter-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-limestone text-muted border border-sandDeep hover:border-terracotta hover:text-terracotta cursor-pointer" data-filter="twin" data-i18n="filter_twin">Chambre Double</button>
+                <button type="button" class="filter-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all bg-limestone text-muted border border-sandDeep hover:border-terracotta hover:text-terracotta cursor-pointer" data-filter="bathroom" data-i18n="filter_bathroom">Salle de bain</button>
+            </div>
+
+            <!-- Mobile: Horizontal Snap Carousel | Tablet & Laptop (md+): Responsive Grid -->
+            <div id="galleryCarousel" class="carousel-track flex gap-3 overflow-x-auto no-scrollbar pb-3 -mx-4 px-4 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-3 lg:grid-cols-4 md:gap-4 lg:gap-5 md:overflow-visible reveal"></div>
+
+            <!-- Mobile-Only Carousel Progress & Arrows -->
+            <div class="mt-4 flex md:hidden items-center justify-between gap-4">
+                <div id="carouselDots" class="flex items-center gap-1.5 flex-1 max-w-[200px]"></div>
+                <div class="flex items-center gap-2 shrink-0">
+                    <span id="carouselCounterMobile" class="text-[11px] font-semibold text-muted">1 / 47</span>
+                    <button id="carouselPrevMobile" type="button" aria-label="Précédent" class="w-8 h-8 rounded-full bg-limestone border border-sandDeep text-cypress flex items-center justify-center cursor-pointer">
+                        <i class="fas fa-chevron-left text-[11px]"></i>
+                    </button>
+                    <button id="carouselNextMobile" type="button" aria-label="Suivant" class="w-8 h-8 rounded-full bg-limestone border border-sandDeep text-cypress flex items-center justify-center cursor-pointer">
+                        <i class="fas fa-chevron-right text-[11px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Desktop-Only Show More / Show Less Button -->
+            <div id="galleryExpandWrap" class="hidden md:flex justify-center mt-8">
+                <button id="galleryExpandBtn" type="button" class="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-limestone hover:bg-cypress hover:text-white border border-sandDeep hover:border-cypress text-cypress text-xs font-semibold tracking-wide transition-all cursor-pointer shadow-sm">
+                    <span id="galleryExpandLabel">Voir plus de photos</span>
+                    <i id="galleryExpandIcon" class="fas fa-chevron-down text-[11px] transition-transform"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. AMENITIES ("ÉQUIPEMENTS") ==================== -->
+    <section id="features" class="py-14 sm:py-24 bg-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+                <div class="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-terracotta mb-3">
+                    <span class="w-6 h-[1px] bg-terracotta"></span>
+                    <span data-i18n="features_subtitle">Équipements</span>
+                    <span class="w-6 h-[1px] bg-terracotta"></span>
+                </div>
+                <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-cypress mb-3" data-i18n="features_title">Tout le confort dont vous avez besoin</h2>
+                <p class="text-muted text-xs sm:text-base" data-i18n="features_desc">Chaque détail a été pensé pour offrir sérénité, intimité et raffinement durant votre séjour.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-5">
+                <div class="group bg-limestone rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sandDeep/80 hover:border-terracotta/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-card reveal">
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-terracotta/12 text-terracotta group-hover:bg-terracotta group-hover:text-white transition-colors flex items-center justify-center text-sm sm:text-lg mb-3 sm:mb-4">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-xl font-semibold text-cypress mb-1" data-i18n="feat_pool">Piscine Privée</h3>
+                    <p class="text-[11px] sm:text-xs text-muted leading-relaxed" data-i18n="feat_pool_desc">Piscine avec cascade dans chaque villa</p>
+                </div>
+
+                <div class="group bg-limestone rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sandDeep/80 hover:border-terracotta/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-card reveal">
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-terracotta/12 text-terracotta group-hover:bg-terracotta group-hover:text-white transition-colors flex items-center justify-center text-sm sm:text-lg mb-3 sm:mb-4">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-xl font-semibold text-cypress mb-1" data-i18n="feat_kitchen">Cuisine Équipée</h3>
+                    <p class="text-[11px] sm:text-xs text-muted leading-relaxed" data-i18n="feat_kitchen_desc">Cuisine moderne entièrement équipée</p>
+                </div>
+
+                <div class="group bg-limestone rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sandDeep/80 hover:border-terracotta/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-card reveal">
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-terracotta/12 text-terracotta group-hover:bg-terracotta group-hover:text-white transition-colors flex items-center justify-center text-sm sm:text-lg mb-3 sm:mb-4">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-xl font-semibold text-cypress mb-1" data-i18n="feat_garage">Garage Privé</h3>
+                    <p class="text-[11px] sm:text-xs text-muted leading-relaxed" data-i18n="feat_garage_desc">Stationnement sécurisé pour votre véhicule</p>
+                </div>
+
+                <div class="group bg-limestone rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sandDeep/80 hover:border-terracotta/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-card reveal">
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-terracotta/12 text-terracotta group-hover:bg-terracotta group-hover:text-white transition-colors flex items-center justify-center text-sm sm:text-lg mb-3 sm:mb-4">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-xl font-semibold text-cypress mb-1" data-i18n="feat_bbq">Barbecue</h3>
+                    <p class="text-[11px] sm:text-xs text-muted leading-relaxed" data-i18n="feat_bbq_desc">Espace barbecue pour vos grillades</p>
+                </div>
+
+                <div class="group bg-limestone rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sandDeep/80 hover:border-terracotta/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-card reveal">
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-terracotta/12 text-terracotta group-hover:bg-terracotta group-hover:text-white transition-colors flex items-center justify-center text-sm sm:text-lg mb-3 sm:mb-4">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-xl font-semibold text-cypress mb-1" data-i18n="feat_outdoor">Salon Extérieur</h3>
+                    <p class="text-[11px] sm:text-xs text-muted leading-relaxed" data-i18n="feat_outdoor_desc">Espace de vie extérieur aménagé</p>
+                </div>
+
+                <div class="group bg-limestone rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sandDeep/80 hover:border-terracotta/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-card reveal">
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-terracotta/12 text-terracotta group-hover:bg-terracotta group-hover:text-white transition-colors flex items-center justify-center text-sm sm:text-lg mb-3 sm:mb-4">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-xl font-semibold text-cypress mb-1" data-i18n="feat_tanning">Chaises Longues</h3>
+                    <p class="text-[11px] sm:text-xs text-muted leading-relaxed" data-i18n="feat_tanning_desc">Transats pour se détendre au soleil</p>
+                </div>
+
+                <div class="group bg-limestone rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sandDeep/80 hover:border-terracotta/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-card reveal">
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-terracotta/12 text-terracotta group-hover:bg-terracotta group-hover:text-white transition-colors flex items-center justify-center text-sm sm:text-lg mb-3 sm:mb-4">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-xl font-semibold text-cypress mb-1" data-i18n="feat_ac">Climatisation</h3>
+                    <p class="text-[11px] sm:text-xs text-muted leading-relaxed" data-i18n="feat_ac_desc">Climatisation dans toutes les pièces</p>
+                </div>
+
+                <div class="group bg-limestone rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sandDeep/80 hover:border-terracotta/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-card reveal">
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-terracotta/12 text-terracotta group-hover:bg-terracotta group-hover:text-white transition-colors flex items-center justify-center text-sm sm:text-lg mb-3 sm:mb-4">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-xl font-semibold text-cypress mb-1" data-i18n="feat_wifi">Wi-Fi Rechargeable</h3>
+                    <p class="text-[11px] sm:text-xs text-muted leading-relaxed" data-i18n="feat_wifi_desc">Box Wi-Fi rechargeable selon vos besoins</p>
+                </div>
+
+                <div class="group bg-limestone rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sandDeep/80 hover:border-terracotta/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-card reveal">
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-terracotta/12 text-terracotta group-hover:bg-terracotta group-hover:text-white transition-colors flex items-center justify-center text-sm sm:text-lg mb-3 sm:mb-4">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-xl font-semibold text-cypress mb-1" data-i18n="feat_terrace">Terrasse</h3>
+                    <p class="text-[11px] sm:text-xs text-muted leading-relaxed" data-i18n="feat_terrace_desc">Grande terrasse pour vos soirées</p>
+                </div>
+
+                <div class="group bg-limestone rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sandDeep/80 hover:border-terracotta/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-card reveal">
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-terracotta/12 text-terracotta group-hover:bg-terracotta group-hover:text-white transition-colors flex items-center justify-center text-sm sm:text-lg mb-3 sm:mb-4">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-serif text-base sm:text-xl font-semibold text-cypress mb-1" data-i18n="feat_security">Sécurité 24h/24</h3>
+                    <p class="text-[11px] sm:text-xs text-muted leading-relaxed" data-i18n="feat_security_desc">Résidence sécurisée 24h/24</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. LOCATION ("LOCALISATION") ==================== -->
+    <section id="location" class="py-14 sm:py-24 bg-limestone">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-5 reveal">
+                    <div class="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-terracotta mb-2.5">
+                        <span class="w-8 h-[1px] bg-terracotta"></span>
+                        <span data-i18n="location_subtitle">Localisation</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-cypress mb-2" data-i18n="location_title">Où nous trouver</h2>
+                    <p class="text-xs sm:text-sm font-medium text-cobalt mb-6" data-i18n="location_heading">Diar Salem – Djerba, Tunisie</p>
+
+                    <div class="space-y-4 sm:space-y-5">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-full bg-sand border border-sandDeep text-terracotta flex items-center justify-center shrink-0 mt-0.5 text-xs">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs sm:text-sm font-semibold text-cypress mb-0.5" data-i18n="location_address_label">Point de rendez-vous</h3>
+                                <p class="text-xs sm:text-sm text-muted leading-relaxed" data-i18n="location_address">Djerba, Medenine, Tunisie — Notre agent vous accueillera à ce point et vous guidera jusqu'aux villas.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-full bg-sand border border-sandDeep text-terracotta flex items-center justify-center shrink-0 mt-0.5 text-xs">
+                                <i class="fas fa-directions"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs sm:text-sm font-semibold text-cypress mb-0.5" data-i18n="location_directions_label">Itinéraire</h3>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=33.851938,10.981549" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-terracotta hover:text-terracottaHover underline underline-offset-4 transition-colors" data-i18n="location_directions">
+                                    Ouvrir dans Google Maps ↗
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-full bg-sand border border-sandDeep text-cobalt flex items-center justify-center shrink-0 mt-0.5 text-xs">
+                                <i class="fas fa-plane"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs sm:text-sm font-semibold text-cypress mb-0.5" data-i18n="location_airport_label">Aéroport</h3>
+                                <p class="text-xs sm:text-sm text-muted" data-i18n="location_airport">Aéroport international de Djerba-Zarzis (DJE)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-full bg-sand border border-sandDeep text-cobalt flex items-center justify-center shrink-0 mt-0.5 text-xs">
+                                <i class="fas fa-umbrella-beach"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs sm:text-sm font-semibold text-cypress mb-0.5" data-i18n="location_beach_label">Plages</h3>
+                                <p class="text-xs sm:text-sm text-muted" data-i18n="location_beach">À proximité des plus belles plages de Djerba</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-full bg-sand border border-sandDeep text-terracotta flex items-center justify-center shrink-0 mt-0.5 text-xs">
+                                <i class="fas fa-mosque"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs sm:text-sm font-semibold text-cypress mb-0.5" data-i18n="location_culture_label">Culture</h3>
+                                <p class="text-xs sm:text-sm text-muted" data-i18n="location_culture">Houmt Souk, Synagogue de la Ghriba, Musée de Guellala</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 reveal">
+                    <div class="rounded-2xl sm:rounded-3xl overflow-hidden shadow-editorial border border-sandDeep bg-sand h-[320px] sm:h-[440px] relative">
+                        <iframe
+                            src="https://maps.google.com/maps?q=33.851938,10.981549&z=15&output=embed"
+                            class="w-full h-full border-0"
+                            allowfullscreen=""
+                            loading="eager"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localisation Diar Salem Djerba">
+                        </iframe>
+
+                        <!-- Mobile & Desktop One-Tap App Launch Bar -->
+                        <div class="absolute bottom-3 inset-x-3 flex items-center justify-center sm:justify-end gap-2 pointer-events-none">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=33.851938,10.981549" target="_blank" rel="noopener" class="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-cypress/95 hover:bg-terracotta text-white text-xs font-semibold shadow-editorial backdrop-blur-md border border-white/15 transition-colors">
+                                <i class="fas fa-diamond-turn-right text-terracotta"></i>
+                                <span data-i18n="map_open_gmaps">Google Maps</span>
+                            </a>
+                            <a href="https://maps.apple.com/?daddr=33.851938,10.981549&q=Diar+Salem+Djerba" target="_blank" rel="noopener" class="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-limestone/95 hover:bg-sand text-cypress text-xs font-semibold shadow-editorial backdrop-blur-md border border-sandDeep transition-colors">
+                                <i class="fab fa-apple text-sm"></i>
+                                <span data-i18n="map_open_apple">Apple Maps</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. COMPACT CONTACT & WHATSAPP BOOKING ==================== -->
+    <section id="contact" class="py-12 sm:py-20 bg-cypress text-white relative overflow-hidden">
+        <div class="absolute -top-28 -right-28 w-72 h-72 rounded-full bg-terracotta/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-28 -left-28 w-72 h-72 rounded-full bg-cobalt/15 blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-xl mx-auto mb-7 sm:mb-10 reveal">
+                <div class="inline-flex items-center gap-2.5 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.24em] text-terracotta mb-2">
+                    <span class="w-5 h-[1px] bg-terracotta"></span>
+                    <span data-i18n="contact_subtitle">Contact</span>
+                    <span class="w-5 h-[1px] bg-terracotta"></span>
+                </div>
+                <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-white mb-2" data-i18n="contact_title">Réservez votre séjour</h2>
+                <p class="text-white/70 text-xs sm:text-sm leading-relaxed" data-i18n="contact_desc">
+                    Contactez notre agence immobilière pour réserver votre villa. Nous sommes disponibles par WhatsApp, Email ou Messenger.
+                </p>
+            </div>
+
+            <!-- Compact WhatsApp Quick Inquiry Card -->
+            <div class="bg-cypressLight/85 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 shadow-editorial mb-4 sm:mb-5 overflow-hidden reveal">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-white/10">
+                    <h3 class="font-serif text-lg sm:text-2xl text-white font-medium leading-tight" data-i18n="booking_title">Demande rapide via WhatsApp</h3>
+                    <span class="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-medium text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2.5 py-0.5 rounded-full shrink-0">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span data-i18n="booking_fast">Réponse rapide</span>
+                    </span>
+                </div>
+
+                <!-- Bulletproof iOS-Safe Form Layout (No Overlap / No Overflow) -->
+                <form id="bookingForm" class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-end">
+                    <!-- Check-in -->
+                    <div class="sm:col-span-4 w-full min-w-0">
+                        <label for="checkinDate" class="block text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-white/65 mb-1" data-i18n="booking_checkin">Arrivée</label>
+                        <input type="date" id="checkinDate" class="w-full max-w-full min-w-0 h-10 px-3 rounded-xl bg-cypress border border-white/15 text-white text-sm focus:outline-none focus:border-terracotta transition-colors">
+                    </div>
+
+                    <!-- Check-out -->
+                    <div class="sm:col-span-4 w-full min-w-0">
+                        <label for="checkoutDate" class="block text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-white/65 mb-1" data-i18n="booking_checkout">Départ</label>
+                        <input type="date" id="checkoutDate" class="w-full max-w-full min-w-0 h-10 px-3 rounded-xl bg-cypress border border-white/15 text-white text-sm focus:outline-none focus:border-terracotta transition-colors">
+                    </div>
+
+                    <!-- Guests + Submit Button -->
+                    <div class="sm:col-span-4 flex items-end gap-2.5 w-full min-w-0">
+                        <div class="w-24 shrink-0 relative">
+                            <label for="guestsCount" class="block text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-white/65 mb-1" data-i18n="booking_guests">Pers.</label>
+                            <select id="guestsCount" class="w-full h-10 pl-3 pr-7 rounded-xl bg-cypress border border-white/15 text-white text-sm focus:outline-none focus:border-terracotta transition-colors">
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4" selected>4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="6+">6+</option>
+                            </select>
+                            <i class="fas fa-chevron-down text-[10px] text-white/55 pointer-events-none absolute right-2.5 bottom-3.5 rtl:right-auto rtl:left-2.5"></i>
+                        </div>
+                        <button type="submit" class="flex-1 h-10 inline-flex items-center justify-center gap-1.5 px-3 rounded-xl bg-terracotta hover:bg-terracottaHover text-white text-xs sm:text-sm font-semibold transition-all shadow-glow cursor-pointer">
+                            <i class="fab fa-whatsapp text-sm"></i>
+                            <span data-i18n="booking_btn">Réserver</span>
+                        </button>
+                    </div>
+                </form>
+
+                <p id="bookingNotice" class="hidden mt-2.5 text-[11px] text-amber-300"></p>
+            </div>
+
+            <!-- Compact 3-Column Direct Contact Pills (Single Row on iPhone) -->
+            <div class="grid grid-cols-3 gap-2 sm:gap-3 reveal">
+                <a href="https://wa.me/216XXXXXXXX?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20une%20villa%20Diar%20Salem." target="_blank" rel="noopener" class="group flex items-center justify-center gap-1.5 sm:gap-2.5 h-10 sm:h-11 px-2 sm:px-4 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366] border border-[#25D366]/40 text-white text-xs sm:text-sm font-semibold transition-all">
+                    <i class="fab fa-whatsapp text-sm sm:text-base text-[#25D366] group-hover:text-white transition-colors"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="mailto:contact@diarsalem.com?subject=Réservation%20Villa%20Diar%20Salem" class="group flex items-center justify-center gap-1.5 sm:gap-2.5 h-10 sm:h-11 px-2 sm:px-4 rounded-xl bg-white/5 hover:bg-terracotta border border-white/15 hover:border-terracotta text-white text-xs sm:text-sm font-semibold transition-all">
+                    <i class="fas fa-envelope text-xs sm:text-sm text-terracotta group-hover:text-white transition-colors"></i>
+                    <span>Email</span>
+                </a>
+                <a href="https://m.me/diarsalem" target="_blank" rel="noopener" class="group flex items-center justify-center gap-1.5 sm:gap-2.5 h-10 sm:h-11 px-2 sm:px-4 rounded-xl bg-[#0084FF]/15 hover:bg-[#0084FF] border border-[#0084FF]/40 text-white text-xs sm:text-sm font-semibold transition-all">
+                    <i class="fab fa-facebook-messenger text-sm sm:text-base text-[#33A0FF] group-hover:text-white transition-colors"></i>
+                    <span>Messenger</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 8. FOOTER ==================== -->
+    <footer class="bg-[#0F171C] text-white/65 pt-12 pb-20 sm:pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-white/10">
+                <div class="md:col-span-5">
+                    <a href="#hero" class="inline-block font-serif text-2xl sm:text-3xl font-semibold text-white mb-3">
+                        Diar <span class="text-terracotta italic">Salem</span>
+                    </a>
+                    <p class="text-xs sm:text-sm leading-relaxed max-w-sm" data-i18n="footer_desc">
+                        Villas de luxe avec piscine privée à Djerba, Tunisie. Un séjour méditerranéen d'exception.
+                    </p>
+                </div>
+
+                <div class="md:col-span-4">
+                    <h4 class="text-xs font-semibold uppercase tracking-[0.2em] text-white mb-4" data-i18n="footer_links">Liens rapides</h4>
+                    <ul class="grid grid-cols-2 md:grid-cols-1 gap-2 text-xs sm:text-sm">
+                        <li><a href="#hero" class="hover:text-terracotta transition-colors" data-i18n="nav_home">Accueil</a></li>
+                        <li><a href="#about" class="hover:text-terracotta transition-colors" data-i18n="nav_about">À propos</a></li>
+                        <li><a href="#gallery" class="hover:text-terracotta transition-colors" data-i18n="nav_gallery">Galerie</a></li>
+                        <li><a href="#features" class="hover:text-terracotta transition-colors" data-i18n="nav_features">Équipements</a></li>
+                        <li><a href="#location" class="hover:text-terracotta transition-colors" data-i18n="nav_location">Localisation</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="text-xs font-semibold uppercase tracking-[0.2em] text-white mb-4" data-i18n="footer_contact">Contact</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm">
+                        <li><a href="https://wa.me/216XXXXXXXX" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-terracotta transition-colors"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="mailto:contact@diarsalem.com" class="inline-flex items-center gap-2 hover:text-terracotta transition-colors"><i class="fas fa-envelope"></i> contact@diarsalem.com</a></li>
+                        <li><a href="https://m.me/diarsalem" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-terracotta transition-colors"><i class="fab fa-facebook-messenger"></i> Messenger</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/45">
+                <p>&copy; 2026 Diar Salem. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+                <p>Djerba, Tunisie</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back-to-Top Floating Button -->
+    <button id="backToTop" type="button" aria-label="Retour en haut" class="fixed right-4 rtl:right-auto rtl:left-4 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-terracotta hover:bg-terracottaHover text-white shadow-glow flex items-center justify-center opacity-0 pointer-events-none translate-y-4 transition-all duration-300 cursor-pointer">
+        <i class="fas fa-chevron-up text-sm"></i>
+    </button>
+
+    <!-- ==================== POP-UP PHOTO LIGHTBOX WITH CLOSE ICON ==================== -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-cypress/95 backdrop-blur-xl hidden flex-col items-center justify-center px-4 sm:px-8" role="dialog" aria-modal="true" aria-label="Visionneuse photo">
+        <!-- Top Bar: Counter & Prominent Close Icon -->
+        <div class="w-full max-w-4xl flex items-center justify-between text-white mb-3">
+            <span id="lightboxCounter" class="text-xs font-semibold tracking-[0.2em] uppercase text-white/75 bg-white/10 px-3 py-1 rounded-full">1 / 10</span>
+            <button id="lightboxClose" type="button" aria-label="Fermer" class="w-10 h-10 rounded-full bg-white/15 hover:bg-terracotta border border-white/25 text-white flex items-center justify-center text-lg transition-colors cursor-pointer">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Centered Pop-up Image + Compact Prev/Next Controls -->
+        <div class="relative w-full max-w-4xl flex-1 flex items-center justify-center min-h-0">
+            <button id="lightboxPrev" type="button" aria-label="Précédent" class="absolute left-1 sm:left-0 z-10 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-cypress/75 hover:bg-terracotta border border-white/20 text-white flex items-center justify-center transition-colors cursor-pointer">
+                <i class="fas fa-chevron-left text-xs sm:text-sm"></i>
+            </button>
+
+            <img id="lightboxImg" src="" alt="" class="max-h-[72vh] max-w-full rounded-2xl object-contain shadow-2xl select-none">
+
+            <button id="lightboxNext" type="button" aria-label="Suivant" class="absolute right-1 sm:right-0 z-10 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-cypress/75 hover:bg-terracotta border border-white/20 text-white flex items-center justify-center transition-colors cursor-pointer">
+                <i class="fas fa-chevron-right text-xs sm:text-sm"></i>
+            </button>
+        </div>
+
+        <!-- Caption -->
+        <div class="mt-3 text-center px-4">
+            <span id="lightboxCat" class="block text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-terracotta mb-0.5"></span>
+            <p id="lightboxCaption" class="font-serif text-lg sm:text-2xl text-white"></p>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+    <script>
+        (function() {
+            'use strict';
+
+            /* ==================== 1. TRANSLATIONS (FR / EN / AR) ==================== */
+            const T = {
+                fr: {
+                    nav_home: 'Accueil',
+                    nav_about: 'À propos',
+                    nav_gallery: 'Galerie',
+                    nav_features: 'Équipements',
+                    nav_location: 'Localisation',
+                    nav_contact: 'Contact',
+                    drawer_lang: 'Langue',
+                    drawer_cta: 'Réserver votre séjour',
+                    hero_badge: 'Djerba, Tunisie',
+                    hero_title_1: 'Bienvenue à',
+                    hero_desc: "Votre résidence de vacances à Djerba. 6 villas de luxe avec piscine privée, au cœur de l'île aux mille charmes.",
+                    hero_cta: 'Découvrir',
+                    hero_contact: 'Nous contacter',
+                    stat_villas: 'Villas Privées',
+                    stat_villas_sub: 'Résidence à Djerba',
+                    stat_clean: 'Nettoyage Complet',
+                    stat_clean_sub: 'Avant chaque séjour',
+                    stat_maint: 'Entretien Inclus',
+                    stat_maint_sub: 'Piscine & jardin',
+                    stat_wifi: 'Wi-Fi Rechargeable',
+                    stat_wifi_sub: 'Recharge à la demande',
+                    about_subtitle: "L'Expérience",
+                    about_title: "L'élégance méditerranéenne au cœur de Djerba",
+                    about_badge_card: 'Art de vivre',
+                    about_desc_1: "Diar Salem est une résidence de vacances composée de 6 villas de standing, située sur la magnifique île de Djerba. Inspirées du style méditerranéen et du charme djerbien, nos villas vous offrent un cadre idéal pour des vacances en famille ou entre amis.",
+                    about_desc_2: "Chaque villa dispose de 2 chambres spacieuses, une piscine privée avec cascade, un espace barbecue, une terrasse avec salon extérieur, un garage, et une cuisine entièrement équipée.",
+                    about_h_1: 'Piscine privée avec cascade',
+                    about_h_2: '2 chambres spacieuses',
+                    about_h_3: 'Espace barbecue',
+                    about_h_4: 'Cuisine entièrement équipée',
+                    about_h_5: 'Terrasse & salon extérieur',
+                    about_h_6: 'Garage privé',
+                    gallery_subtitle: 'Galerie',
+                    gallery_title: 'Visite virtuelle',
+                    gallery_tap_hint: "Faites glisser pour explorer et touchez une photo pour l'agrandir.",
+                    gallery_photos: 'photos',
+                    gallery_show_more: 'Voir plus de photos',
+                    gallery_show_less: 'Voir moins',
+                    filter_all: 'Tout',
+                    filter_exterior: 'Extérieur & Piscine',
+                    filter_living: 'Salon',
+                    filter_dining: 'Salle à manger',
+                    filter_kitchen: 'Cuisine',
+                    filter_master: 'Chambre Principale',
+                    filter_twin: 'Chambre Double',
+                    filter_bathroom: 'Salle de bain',
+                    gal_ext_facade: 'Façade en pierre naturelle',
+                    gal_ext_loungers: 'Piscine avec cascade & transats',
+                    gal_ext_pool: 'Piscine privée',
+                    gal_ext_terrace_wide: 'Salon extérieur & terrasse',
+                    gal_ext_terrace_close: 'Espace détente en plein air',
+                    gal_ext_view: 'Vue extérieure & piscine',
+                    gal_living_pool: 'Salon avec vue sur la piscine',
+                    gal_living_led: 'Salon avec éclairage LED',
+                    gal_living_view: 'Salon lumineux',
+                    gal_dining_view: 'Salle à manger climatisée',
+                    gal_kitchen_view: 'Cuisine moderne équipée',
+                    gal_master_view: 'Suite & chambre principale',
+                    gal_twin_view: 'Chambre double',
+                    gal_bath_view: 'Salle de bain moderne',
+                    features_subtitle: 'Équipements',
+                    features_title: 'Tout le confort dont vous avez besoin',
+                    features_desc: 'Chaque détail a été pensé pour offrir sérénité, intimité et raffinement durant votre séjour.',
+                    feat_pool: 'Piscine Privée',
+                    feat_pool_desc: 'Piscine avec cascade dans chaque villa',
+                    feat_kitchen: 'Cuisine Équipée',
+                    feat_kitchen_desc: 'Cuisine moderne entièrement équipée',
+                    feat_garage: 'Garage Privé',
+                    feat_garage_desc: 'Stationnement sécurisé pour votre véhicule',
+                    feat_bbq: 'Barbecue',
+                    feat_bbq_desc: 'Espace barbecue pour vos grillades',
+                    feat_outdoor: 'Salon Extérieur',
+                    feat_outdoor_desc: 'Espace de vie extérieur aménagé',
+                    feat_tanning: 'Chaises Longues',
+                    feat_tanning_desc: 'Transats pour se détendre au soleil',
+                    feat_ac: 'Climatisation',
+                    feat_ac_desc: 'Climatisation dans toutes les pièces',
+                    feat_wifi: 'Wi-Fi Rechargeable',
+                    feat_wifi_desc: 'Box Wi-Fi rechargeable selon vos besoins',
+                    feat_terrace: 'Terrasse',
+                    feat_terrace_desc: 'Grande terrasse pour vos soirées',
+                    feat_security: 'Sécurité 24h/24',
+                    feat_security_desc: 'Résidence sécurisée 24h/24',
+                    location_subtitle: 'Localisation',
+                    location_title: 'Où nous trouver',
+                    location_heading: 'Diar Salem – Djerba, Tunisie',
+                    location_address_label: 'Point de rendez-vous',
+                    location_address: "Djerba, Medenine, Tunisie — Notre agent vous accueillera à ce point et vous guidera jusqu'aux villas.",
+                    location_directions_label: 'Itinéraire',
+                    location_directions: 'Ouvrir dans Google Maps ↗',
+                    map_open_gmaps: 'Google Maps',
+                    map_open_apple: 'Apple Maps',
+                    location_airport_label: 'Aéroport',
+                    location_airport: 'Aéroport international de Djerba-Zarzis (DJE)',
+                    location_beach_label: 'Plages',
+                    location_beach: 'À proximité des plus belles plages de Djerba',
+                    location_culture_label: 'Culture',
+                    location_culture: 'Houmt Souk, Synagogue de la Ghriba, Musée de Guellala',
+                    contact_subtitle: 'Contact',
+                    contact_title: 'Réservez votre séjour',
+                    contact_desc: 'Contactez notre agence immobilière pour réserver votre villa. Nous sommes disponibles par WhatsApp, Email ou Messenger.',
+                    booking_title: 'Demande rapide via WhatsApp',
+                    booking_fast: 'Réponse rapide',
+                    booking_checkin: 'Arrivée',
+                    booking_checkout: 'Départ',
+                    booking_guests: 'Pers.',
+                    booking_btn: 'Réserver',
+                    booking_invalid_dates: "La date de départ doit être postérieure à la date d'arrivée.",
+                    footer_desc: "Villas de luxe avec piscine privée à Djerba, Tunisie. Un séjour méditerranéen d'exception.",
+                    footer_links: 'Liens rapides',
+                    footer_contact: 'Contact',
+                    footer_rights: 'Tous droits réservés.'
+                },
+                en: {
+                    nav_home: 'Home',
+                    nav_about: 'About',
+                    nav_gallery: 'Gallery',
+                    nav_features: 'Amenities',
+                    nav_location: 'Location',
+                    nav_contact: 'Contact',
+                    drawer_lang: 'Language',
+                    drawer_cta: 'Book your stay',
+                    hero_badge: 'Djerba, Tunisia',
+                    hero_title_1: 'Welcome to',
+                    hero_desc: 'Your holiday residence in Djerba. 6 luxury villas with private pools, in the heart of the island of a thousand charms.',
+                    hero_cta: 'Explore',
+                    hero_contact: 'Contact Us',
+                    stat_villas: 'Private Villas',
+                    stat_villas_sub: 'Djerba residence',
+                    stat_clean: 'Full Cleaning',
+                    stat_clean_sub: 'Before every stay',
+                    stat_maint: 'Maintenance Included',
+                    stat_maint_sub: 'Pool & garden care',
+                    stat_wifi: 'Rechargeable Wi-Fi',
+                    stat_wifi_sub: 'Top-up on demand',
+                    about_subtitle: 'The Experience',
+                    about_title: 'Mediterranean elegance in the heart of Djerba',
+                    about_badge_card: 'Art of living',
+                    about_desc_1: 'Diar Salem is a holiday residence made up of 6 upscale villas, located on the beautiful island of Djerba. Inspired by Mediterranean style and Djerbian charm, our villas offer the ideal setting for holidays with family or friends.',
+                    about_desc_2: 'Each villa features 2 spacious bedrooms, a private pool with waterfall, a barbecue area, a terrace with outdoor lounge, a garage, and a fully equipped kitchen.',
+                    about_h_1: 'Private pool with waterfall',
+                    about_h_2: '2 spacious bedrooms',
+                    about_h_3: 'Barbecue area',
+                    about_h_4: 'Fully equipped kitchen',
+                    about_h_5: 'Terrace & outdoor lounge',
+                    about_h_6: 'Private garage',
+                    gallery_subtitle: 'Gallery',
+                    gallery_title: 'Virtual tour',
+                    gallery_tap_hint: 'Swipe to browse and tap any photo to open it full screen.',
+                    gallery_photos: 'photos',
+                    gallery_show_more: 'Show more photos',
+                    gallery_show_less: 'Show less',
+                    filter_all: 'All',
+                    filter_exterior: 'Exterior & Pool',
+                    filter_living: 'Living Room',
+                    filter_dining: 'Dining Room',
+                    filter_kitchen: 'Kitchen',
+                    filter_master: 'Master Bedroom',
+                    filter_twin: 'Twin Bedroom',
+                    filter_bathroom: 'Bathroom',
+                    gal_ext_facade: 'Natural stone facade',
+                    gal_ext_loungers: 'Pool with waterfall & loungers',
+                    gal_ext_pool: 'Private pool',
+                    gal_ext_terrace_wide: 'Outdoor lounge & terrace',
+                    gal_ext_terrace_close: 'Outdoor relaxation area',
+                    gal_ext_view: 'Exterior & pool view',
+                    gal_living_pool: 'Living room with pool view',
+                    gal_living_led: 'Living room with LED lighting',
+                    gal_living_view: 'Bright living room',
+                    gal_dining_view: 'Air-conditioned dining area',
+                    gal_kitchen_view: 'Modern equipped kitchen',
+                    gal_master_view: 'Master bedroom',
+                    gal_twin_view: 'Twin bedroom',
+                    gal_bath_view: 'Modern bathroom',
+                    features_subtitle: 'Amenities',
+                    features_title: 'All the comfort you need',
+                    features_desc: 'Every detail has been designed to offer serenity, privacy, and refinement throughout your stay.',
+                    feat_pool: 'Private Pool',
+                    feat_pool_desc: 'Pool with waterfall in each villa',
+                    feat_kitchen: 'Equipped Kitchen',
+                    feat_kitchen_desc: 'Modern, fully equipped kitchen',
+                    feat_garage: 'Private Garage',
+                    feat_garage_desc: 'Secure parking for your vehicle',
+                    feat_bbq: 'Barbecue',
+                    feat_bbq_desc: 'BBQ area for your grill evenings',
+                    feat_outdoor: 'Outdoor Lounge',
+                    feat_outdoor_desc: 'Furnished outdoor living area',
+                    feat_tanning: 'Sun Loungers',
+                    feat_tanning_desc: 'Tanning chairs to relax in the sun',
+                    feat_ac: 'Air Conditioning',
+                    feat_ac_desc: 'Air conditioning in every room',
+                    feat_wifi: 'Rechargeable Wi-Fi',
+                    feat_wifi_desc: 'Rechargeable Wi-Fi box available on demand',
+                    feat_terrace: 'Terrace',
+                    feat_terrace_desc: 'Spacious terrace for your evenings',
+                    feat_security: '24/7 Security',
+                    feat_security_desc: '24/7 secured residence',
+                    location_subtitle: 'Location',
+                    location_title: 'How to find us',
+                    location_heading: 'Diar Salem – Djerba, Tunisia',
+                    location_address_label: 'Meeting point',
+                    location_address: 'Djerba, Medenine, Tunisia — Our agent will greet you at this point and guide you to the villas.',
+                    location_directions_label: 'Directions',
+                    location_directions: 'Open in Google Maps ↗',
+                    map_open_gmaps: 'Google Maps',
+                    map_open_apple: 'Apple Maps',
+                    location_airport_label: 'Airport',
+                    location_airport: 'Djerba-Zarzis International Airport (DJE)',
+                    location_beach_label: 'Beaches',
+                    location_beach: "Close to Djerba's most beautiful beaches",
+                    location_culture_label: 'Culture',
+                    location_culture: 'Houmt Souk, El Ghriba Synagogue, Guellala Museum',
+                    contact_subtitle: 'Contact',
+                    contact_title: 'Book your stay',
+                    contact_desc: 'Contact our real estate agency to book your villa. We are available via WhatsApp, Email, or Messenger.',
+                    booking_title: 'Quick WhatsApp Inquiry',
+                    booking_fast: 'Fast reply',
+                    booking_checkin: 'Check-in',
+                    booking_checkout: 'Check-out',
+                    booking_guests: 'Guests',
+                    booking_btn: 'Book now',
+                    booking_invalid_dates: 'Check-out date must be after the check-in date.',
+                    footer_desc: 'Luxury villas with private pool in Djerba, Tunisia. An exceptional Mediterranean experience.',
+                    footer_links: 'Quick Links',
+                    footer_contact: 'Contact',
+                    footer_rights: 'All rights reserved.'
+                },
+                ar: {
+                    nav_home: 'الرئيسية',
+                    nav_about: 'من نحن',
+                    nav_gallery: 'معرض الصور',
+                    nav_features: 'المرافق',
+                    nav_location: 'الموقع',
+                    nav_contact: 'اتصل بنا',
+                    drawer_lang: 'اللغة',
+                    drawer_cta: 'احجز إقامتك',
+                    hero_badge: 'جربة، تونس',
+                    hero_title_1: 'مرحباً بكم في',
+                    hero_desc: 'إقامتكم لقضاء العطلات في جربة. 6 فيلات فاخرة مع مسابح خاصة، في قلب جزيرة الألف سحر.',
+                    hero_cta: 'اكتشف',
+                    hero_contact: 'تواصل معنا',
+                    stat_villas: 'فيلات خاصة',
+                    stat_villas_sub: 'إقامة في جربة',
+                    stat_clean: 'تنظيف شامل',
+                    stat_clean_sub: 'قبل كل إقامة',
+                    stat_maint: 'صيانة مستمرة',
+                    stat_maint_sub: 'للمسبح والحديقة',
+                    stat_wifi: 'واي فاي قابل للشحن',
+                    stat_wifi_sub: 'شحن حسب الطلب',
+                    about_subtitle: 'التجربة',
+                    about_title: 'الأناقة المتوسطية في قلب جربة',
+                    about_badge_card: 'فن العيش',
+                    about_desc_1: 'ديار سالم هي إقامة لقضاء العطلات تتكون من 6 فيلات فاخرة، تقع في جزيرة جربة الساحرة. مستوحاة من الطراز المتوسطي وسحر جربة، توفر لكم فيلاتنا الإطار المثالي لقضاء عطلة مع العائلة أو الأصدقاء.',
+                    about_desc_2: 'تتميز كل فيلا بغرفتي نوم واسعتين ومسبح خاص مع شلال ومنطقة شواء وشرفة مع صالون خارجي ومرآب ومطبخ مجهز بالكامل.',
+                    about_h_1: 'مسبح خاص مع شلال',
+                    about_h_2: 'غرفتا نوم واسعتان',
+                    about_h_3: 'منطقة شواء',
+                    about_h_4: 'مطبخ مجهز بالكامل',
+                    about_h_5: 'شرفة وصالون خارجي',
+                    about_h_6: 'مرآب خاص',
+                    gallery_subtitle: 'معرض الصور',
+                    gallery_title: 'جولة افتراضية',
+                    gallery_tap_hint: 'اسحب للتصفح واضغط على أي صورة لعرضها بالحجم الكامل.',
+                    gallery_photos: 'صورة',
+                    gallery_show_more: 'عرض المزيد من الصور',
+                    gallery_show_less: 'عرض أقل',
+                    filter_all: 'الكل',
+                    filter_exterior: 'الخارج والمسبح',
+                    filter_living: 'الصالون',
+                    filter_dining: 'غرفة الطعام',
+                    filter_kitchen: 'المطبخ',
+                    filter_master: 'غرفة النوم الرئيسية',
+                    filter_twin: 'غرفة النوم المزدوجة',
+                    filter_bathroom: 'الحمام',
+                    gal_ext_facade: 'واجهة من الحجر الطبيعي',
+                    gal_ext_loungers: 'مسبح مع شلال وكراسي استرخاء',
+                    gal_ext_pool: 'مسبح خاص',
+                    gal_ext_terrace_wide: 'صالون خارجي وشرفة',
+                    gal_ext_terrace_close: 'مساحة استرخاء في الهواء الطلق',
+                    gal_ext_view: 'إطلالة خارجية ومسبح',
+                    gal_living_pool: 'صالون مع إطلالة على المسبح',
+                    gal_living_led: 'صالون مع إضاءة LED',
+                    gal_living_view: 'صالون عصري ومريح',
+                    gal_dining_view: 'غرفة طعام مكيفة',
+                    gal_kitchen_view: 'مطبخ عصري مجهز',
+                    gal_master_view: 'غرفة النوم الرئيسية',
+                    gal_twin_view: 'غرفة النوم المزدوجة',
+                    gal_bath_view: 'حمام عصري',
+                    features_subtitle: 'المرافق',
+                    features_title: 'كل الراحة التي تحتاجونها',
+                    features_desc: 'صُمم كل تفصيل ليوفر لكم الهدوء والخصوصية والفخامة طوال إقامتكم.',
+                    feat_pool: 'مسبح خاص',
+                    feat_pool_desc: 'مسبح مع شلال في كل فيلا',
+                    feat_kitchen: 'مطبخ مجهز',
+                    feat_kitchen_desc: 'مطبخ عصري مجهز بالكامل',
+                    feat_garage: 'مرآب خاص',
+                    feat_garage_desc: 'موقف آمن لسيارتكم',
+                    feat_bbq: 'شواء',
+                    feat_bbq_desc: 'منطقة شواء لأمسياتكم',
+                    feat_outdoor: 'صالون خارجي',
+                    feat_outdoor_desc: 'مساحة معيشة خارجية مؤثثة',
+                    feat_tanning: 'كراسي تشمس',
+                    feat_tanning_desc: 'كراسي استرخاء تحت أشعة الشمس',
+                    feat_ac: 'تكييف الهواء',
+                    feat_ac_desc: 'تكييف هواء في جميع الغرف',
+                    feat_wifi: 'واي فاي قابل للشحن',
+                    feat_wifi_desc: 'جهاز واي فاي قابل للشحن حسب احتياجكم',
+                    feat_terrace: 'شرفة',
+                    feat_terrace_desc: 'شرفة واسعة لأمسياتكم',
+                    feat_security: 'الأمن 24/7',
+                    feat_security_desc: 'إقامة مؤمنة على مدار الساعة',
+                    location_subtitle: 'الموقع',
+                    location_title: 'أين تجدوننا',
+                    location_heading: 'ديار سالم – جربة، تونس',
+                    location_address_label: 'نقطة الالتقاء',
+                    location_address: 'جربة، مدنين، تونس — سيستقبلكم وكيلنا في هذه النقطة ويرشدكم إلى الفيلات.',
+                    location_directions_label: 'الاتجاهات',
+                    location_directions: 'فتح في خرائط جوجل ↗',
+                    map_open_gmaps: 'خرائط جوجل',
+                    map_open_apple: 'خرائط آبل',
+                    location_airport_label: 'المطار',
+                    location_airport: 'مطار جربة جرجيس الدولي (DJE)',
+                    location_beach_label: 'الشواطئ',
+                    location_beach: 'بالقرب من أجمل شواطئ جربة',
+                    location_culture_label: 'الثقافة',
+                    location_culture: 'حومة السوق، كنيس الغريبة، متحف قلالة',
+                    contact_subtitle: 'التواصل',
+                    contact_title: 'احجزوا إقامتكم',
+                    contact_desc: 'تواصلوا مع وكالتنا العقارية لحجز فيلتكم. نحن متاحون عبر واتساب أو البريد الإلكتروني أو ماسنجر.',
+                    booking_title: 'طلب حجز سريع عبر واتساب',
+                    booking_fast: 'رد سريع',
+                    booking_checkin: 'الوصول',
+                    booking_checkout: 'المغادرة',
+                    booking_guests: 'ضيوف',
+                    booking_btn: 'احجز الآن',
+                    booking_invalid_dates: 'يجب أن يكون تاريخ المغادرة بعد تاريخ الوصول.',
+                    footer_desc: 'فيلات فاخرة مع مسبح خاص في جربة، تونس. تجربة متوسطية استثنائية.',
+                    footer_links: 'روابط سريعة',
+                    footer_contact: 'التواصل',
+                    footer_rights: 'جميع الحقوق محفوظة.'
+                }
+            };
+
+            let currentLang = 'fr';
+
+            function setLanguage(lang) {
+                if (!T[lang]) return;
+                currentLang = lang;
+                const html = document.documentElement;
+                html.setAttribute('lang', lang);
+                html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+                document.querySelectorAll('[data-i18n]').forEach(function(el) {
+                    const key = el.getAttribute('data-i18n');
+                    if (T[lang][key]) {
+                        el.textContent = T[lang][key];
+                    }
+                });
+
+                document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+
+                if (typeof updateDesktopGridLimit === 'function') {
+                    updateDesktopGridLimit();
+                }
+
+                try {
+                    localStorage.setItem('diar-salem-lang', lang);
+                } catch (e) {}
+            }
+
+            document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    setLanguage(this.getAttribute('data-lang'));
+                });
+            });
+
+            try {
+                const savedLang = localStorage.getItem('diar-salem-lang');
+                if (savedLang && T[savedLang]) setLanguage(savedLang);
+            } catch (e) {}
+
+            /* ==================== 2. NAVBAR & BACK TO TOP ==================== */
+            const navbar = document.getElementById('navbar');
+            const navSentinel = document.getElementById('navSentinel');
+            const backToTop = document.getElementById('backToTop');
+
+            function updateNavbarState(isScrolled) {
+                if (!navbar) return;
+                navbar.classList.toggle('is-scrolled', isScrolled);
+            }
+
+            function handleScroll() {
+                const scrollY = Math.max(
+                    window.scrollY || 0,
+                    document.documentElement ? document.documentElement.scrollTop : 0,
+                    document.body ? document.body.scrollTop : 0
+                );
+                updateNavbarState(scrollY > 30);
+
+                if (backToTop) {
+                    const showTop = scrollY > 400;
+                    backToTop.classList.toggle('opacity-100', showTop);
+                    backToTop.classList.toggle('pointer-events-auto', showTop);
+                    backToTop.classList.toggle('translate-y-0', showTop);
+                    backToTop.classList.toggle('opacity-0', !showTop);
+                    backToTop.classList.toggle('pointer-events-none', !showTop);
+                    backToTop.classList.toggle('translate-y-4', !showTop);
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            document.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+
+            if ('IntersectionObserver' in window && navSentinel) {
+                const navObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        updateNavbarState(!entry.isIntersecting);
+                    });
+                }, { threshold: 0 });
+                navObserver.observe(navSentinel);
+            }
+
+            if (backToTop) {
+                backToTop.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            /* ==================== 3. SLIDE-OVER MOBILE DRAWER MENU ==================== */
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileDrawer = document.getElementById('mobileDrawer');
+            const mobileDrawerBackdrop = document.getElementById('mobileDrawerBackdrop');
+            const drawerClose = document.getElementById('drawerClose');
+
+            function setMobileMenu(open) {
+                if (!mobileDrawer || !menuToggle) return;
+                menuToggle.setAttribute('aria-expanded', String(open));
+                mobileDrawer.classList.toggle('is-open', open);
+                document.body.style.overflow = open ? 'hidden' : '';
+            }
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    setMobileMenu(!mobileDrawer.classList.contains('is-open'));
+                });
+            }
+            if (drawerClose) {
+                drawerClose.addEventListener('click', function() {
+                    setMobileMenu(false);
+                });
+            }
+            if (mobileDrawerBackdrop) {
+                mobileDrawerBackdrop.addEventListener('click', function() {
+                    setMobileMenu(false);
+                });
+            }
+
+            document.querySelectorAll('.mobile-link').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    setMobileMenu(false);
+                });
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('is-open')) {
+                    setMobileMenu(false);
+                }
+            });
+
+            /* ==================== 4. CAROUSEL GALLERY & FILTERING ==================== */
+            const GALLERY_DATA = [
+                // Exterior & Pool (13)
+                { src: 'images/exterior/pool-reflection.jpg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_pool' },
+                { src: 'images/exterior/exterior-facade.jpg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_facade' },
+                { src: 'images/exterior/pool-loungers.jpg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_loungers' },
+                { src: 'images/exterior/terrace-wide.jpg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_terrace_wide' },
+                { src: 'images/exterior/terrace-close.jpg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_terrace_close' },
+                { src: 'images/exterior/p07.jpg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_view' },
+                { src: 'images/exterior/p31.jpg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_view' },
+                { src: 'images/exterior/WhatsApp Image 2026-11-18 at 9.23.57 PM (11).jpeg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_view' },
+                { src: 'images/exterior/WhatsApp Image 2026-11-18 at 9.23.57 PM (3).jpeg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_view' },
+                { src: 'images/exterior/WhatsApp Image 2026-11-18 at 9.23.58 PM (12).jpeg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_view' },
+                { src: 'images/exterior/WhatsApp Image 2026-11-18 at 9.23.58 PM (15).jpeg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_view' },
+                { src: 'images/exterior/WhatsApp Image 2026-11-18 at 9.23.58 PM (16).jpeg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_view' },
+                { src: 'images/exterior/WhatsApp Image 2026-11-18 at 9.23.58 PM (17).jpeg', cat: 'exterior', catKey: 'filter_exterior', titleKey: 'gal_ext_view' },
+
+                // Living Room (11)
+                { src: 'images/living room/living-pool-view.jpg', cat: 'living', catKey: 'filter_living', titleKey: 'gal_living_pool' },
+                { src: 'images/living room/living-room.jpg', cat: 'living', catKey: 'filter_living', titleKey: 'gal_living_led' },
+                { src: 'images/living room/p29.jpg', cat: 'living', catKey: 'filter_living', titleKey: 'gal_living_view' },
+                { src: 'images/living room/p58.jpg', cat: 'living', catKey: 'filter_living', titleKey: 'gal_living_view' },
+                { src: 'images/living room/WhatsApp Image 2026-11-18 at 9.23.58 PM (10).jpeg', cat: 'living', catKey: 'filter_living', titleKey: 'gal_living_view' },
+                { src: 'images/living room/WhatsApp Image 2026-11-18 at 9.23.58 PM (13).jpeg', cat: 'living', catKey: 'filter_living', titleKey: 'gal_living_view' },
+                { src: 'images/living room/WhatsApp Image 2026-11-18 at 9.23.58 PM (21).jpeg', cat: 'living', catKey: 'filter_living', titleKey: 'gal_living_view' },
+                { src: 'images/living room/WhatsApp Image 2026-11-18 at 9.23.58 PM (22).jpeg', cat: 'living', catKey: 'filter_living', titleKey: 'gal_living_view' },
+                { src: 'images/living room/WhatsApp Image 2026-11-18 at 9.23.58 PM (23).jpeg', cat: 'living', catKey: 'filter_living', titleKey: 'gal_living_view' },
+                { src: 'images/living room/WhatsApp Image 2026-11-18 at 9.23.58 PM (3).jpeg', cat: 'living', catKey: 'filter_living', titleKey: 'gal_living_view' },
+                { src: 'images/living room/WhatsApp Image 2026-11-18 at 9.23.58 PM (7).jpeg', cat: 'living', catKey: 'filter_living', titleKey: 'gal_living_view' },
+
+                // Dining Room (2)
+                { src: 'images/dinning room/WhatsApp Image 2026-11-18 at 9.23.57 PM (2).jpeg', cat: 'dining', catKey: 'filter_dining', titleKey: 'gal_dining_view' },
+                { src: 'images/dinning room/p23.jpg', cat: 'dining', catKey: 'filter_dining', titleKey: 'gal_dining_view' },
+
+                // Kitchen (11)
+                { src: 'images/kitchen/p24.jpg', cat: 'kitchen', catKey: 'filter_kitchen', titleKey: 'gal_kitchen_view' },
+                { src: 'images/kitchen/p57.jpg', cat: 'kitchen', catKey: 'filter_kitchen', titleKey: 'gal_kitchen_view' },
+                { src: 'images/kitchen/WhatsApp Image 2026-11-18 at 9.23.57 PM (12).jpeg', cat: 'kitchen', catKey: 'filter_kitchen', titleKey: 'gal_kitchen_view' },
+                { src: 'images/kitchen/WhatsApp Image 2026-11-18 at 9.23.57 PM (6).jpeg', cat: 'kitchen', catKey: 'filter_kitchen', titleKey: 'gal_kitchen_view' },
+                { src: 'images/kitchen/WhatsApp Image 2026-11-18 at 9.23.57 PM.jpeg', cat: 'kitchen', catKey: 'filter_kitchen', titleKey: 'gal_kitchen_view' },
+                { src: 'images/kitchen/WhatsApp Image 2026-11-18 at 9.23.58 PM (14).jpeg', cat: 'kitchen', catKey: 'filter_kitchen', titleKey: 'gal_kitchen_view' },
+                { src: 'images/kitchen/WhatsApp Image 2026-11-18 at 9.23.58 PM (19).jpeg', cat: 'kitchen', catKey: 'filter_kitchen', titleKey: 'gal_kitchen_view' },
+                { src: 'images/kitchen/WhatsApp Image 2026-11-18 at 9.23.58 PM (24).jpeg', cat: 'kitchen', catKey: 'filter_kitchen', titleKey: 'gal_kitchen_view' },
+                { src: 'images/kitchen/WhatsApp Image 2026-11-18 at 9.23.58 PM (26).jpeg', cat: 'kitchen', catKey: 'filter_kitchen', titleKey: 'gal_kitchen_view' },
+                { src: 'images/kitchen/WhatsApp Image 2026-11-18 at 9.23.58 PM (5).jpeg', cat: 'kitchen', catKey: 'filter_kitchen', titleKey: 'gal_kitchen_view' },
+                { src: 'images/kitchen/WhatsApp Image 2026-11-18 at 9.23.58 PM.jpeg', cat: 'kitchen', catKey: 'filter_kitchen', titleKey: 'gal_kitchen_view' },
+
+                // Master Bedroom (4)
+                { src: 'images/bedrooms/master bedroom/bedroom-master.jpg', cat: 'master', catKey: 'filter_master', titleKey: 'gal_master_view' },
+                { src: 'images/bedrooms/master bedroom/p61.jpg', cat: 'master', catKey: 'filter_master', titleKey: 'gal_master_view' },
+                { src: 'images/bedrooms/master bedroom/p72.jpg', cat: 'master', catKey: 'filter_master', titleKey: 'gal_master_view' },
+                { src: 'images/bedrooms/master bedroom/WhatsApp Image 2026-11-18 at 9.23.58 PM (6).jpeg', cat: 'master', catKey: 'filter_master', titleKey: 'gal_master_view' },
+
+                // Twin Bedroom (3)
+                { src: 'images/bedrooms/twin bedroom/bedroom-twin.jpg', cat: 'twin', catKey: 'filter_twin', titleKey: 'gal_twin_view' },
+                { src: 'images/bedrooms/twin bedroom/WhatsApp Image 2026-11-18 at 9.23.58 PM (18).jpeg', cat: 'twin', catKey: 'filter_twin', titleKey: 'gal_twin_view' },
+                { src: 'images/bedrooms/twin bedroom/WhatsApp Image 2026-11-18 at 9.23.58 PM (27).jpeg', cat: 'twin', catKey: 'filter_twin', titleKey: 'gal_twin_view' },
+
+                // Bathroom (3)
+                { src: 'images/bathroom/p30.jpg', cat: 'bathroom', catKey: 'filter_bathroom', titleKey: 'gal_bath_view' },
+                { src: 'images/bathroom/WhatsApp Image 2026-11-18 at 9.23.57 PM (5).jpeg', cat: 'bathroom', catKey: 'filter_bathroom', titleKey: 'gal_bath_view' },
+                { src: 'images/bathroom/WhatsApp Image 2026-11-18 at 9.23.58 PM (4).jpeg', cat: 'bathroom', catKey: 'filter_bathroom', titleKey: 'gal_bath_view' }
+            ];
+
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const carousel = document.getElementById('galleryCarousel');
+            const carouselDots = document.getElementById('carouselDots');
+            const counterMobile = document.getElementById('carouselCounterMobile');
+            const prevMobile = document.getElementById('carouselPrevMobile');
+            const nextMobile = document.getElementById('carouselNextMobile');
+            const desktopCountText = document.getElementById('galleryDesktopCountText');
+            const expandWrap = document.getElementById('galleryExpandWrap');
+            const expandBtn = document.getElementById('galleryExpandBtn');
+            const expandLabel = document.getElementById('galleryExpandLabel');
+            const expandIcon = document.getElementById('galleryExpandIcon');
+            const DESKTOP_LIMIT = 12;
+            let isDesktopExpanded = false;
+            let galleryCards = [];
+
+            function buildGalleryCards() {
+                if (!carousel) return;
+                carousel.innerHTML = '';
+                const dict = T[currentLang] || T.fr;
+
+                GALLERY_DATA.forEach(function(item) {
+                    const article = document.createElement('article');
+                    article.className = 'gallery-card carousel-slide shrink-0 w-[74vw] sm:w-[52vw] md:w-auto h-[220px] sm:h-[240px] md:h-[225px] lg:h-[240px] group relative rounded-2xl overflow-hidden bg-sand cursor-pointer shadow-card hover:shadow-editorial transition-shadow';
+                    article.setAttribute('data-category', item.cat);
+                    article.onclick = function() { window.openLightbox(article); };
+
+                    const img = document.createElement('img');
+                    img.src = item.src;
+                    img.alt = dict[item.titleKey] || '';
+                    img.loading = 'lazy';
+                    img.className = 'w-full h-full object-cover';
+
+                    const overlay = document.createElement('div');
+                    overlay.className = 'absolute inset-0 bg-gradient-to-t from-cypress/85 via-cypress/15 to-transparent flex flex-col justify-end p-3.5 sm:p-4';
+
+                    const catSpan = document.createElement('span');
+                    catSpan.className = 'text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta mb-0.5';
+                    catSpan.setAttribute('data-i18n', item.catKey);
+                    catSpan.textContent = dict[item.catKey] || '';
+
+                    const titleEl = document.createElement('h3');
+                    titleEl.className = 'font-serif text-lg sm:text-xl text-white font-medium leading-tight';
+                    titleEl.setAttribute('data-i18n', item.titleKey);
+                    titleEl.textContent = dict[item.titleKey] || '';
+
+                    overlay.appendChild(catSpan);
+                    overlay.appendChild(titleEl);
+
+                    const zoomBadge = document.createElement('span');
+                    zoomBadge.className = 'absolute top-2.5 right-2.5 rtl:right-auto rtl:left-2.5 w-7 h-7 rounded-full bg-cypress/65 backdrop-blur-md text-white/90 text-[11px] flex items-center justify-center border border-white/15 opacity-90 group-hover:bg-terracotta group-hover:border-terracotta transition-colors';
+                    zoomBadge.innerHTML = '<i class="fas fa-expand"></i>';
+
+                    article.appendChild(img);
+                    article.appendChild(overlay);
+                    article.appendChild(zoomBadge);
+                    carousel.appendChild(article);
+                });
+
+                galleryCards = Array.from(carousel.querySelectorAll('.gallery-card'));
+            }
+
+            function getVisibleSlides() {
+                return galleryCards.filter(function(card) {
+                    return !card.classList.contains('hidden');
+                });
+            }
+
+            function getActiveSlideIndex() {
+                const slides = getVisibleSlides();
+                if (!carousel || !slides.length) return 0;
+                const scrollLeft = Math.abs(carousel.scrollLeft);
+                const step = slides[0].offsetWidth + 12;
+                if (!step) return 0;
+                return Math.min(slides.length - 1, Math.max(0, Math.round(scrollLeft / step)));
+            }
+
+            function updateDesktopGridLimit() {
+                const slides = getVisibleSlides();
+                const dict = T[currentLang] || T.fr;
+
+                if (desktopCountText) {
+                    desktopCountText.textContent = slides.length + ' ' + (dict.gallery_photos || 'photos');
+                }
+
+                slides.forEach(function(card, idx) {
+                    const shouldCollapse = !isDesktopExpanded && idx >= DESKTOP_LIMIT;
+                    card.classList.toggle('md-grid-collapsed', shouldCollapse);
+                });
+
+                if (expandWrap && expandLabel && expandIcon) {
+                    const hasMore = slides.length > DESKTOP_LIMIT;
+                    expandWrap.classList.toggle('md:flex', hasMore);
+                    expandWrap.classList.toggle('md:hidden', !hasMore);
+
+                    if (hasMore) {
+                        const remaining = slides.length - DESKTOP_LIMIT;
+                        expandLabel.textContent = isDesktopExpanded
+                            ? (dict.gallery_show_less || 'Voir moins')
+                            : (dict.gallery_show_more || 'Voir plus de photos') + ' (+' + remaining + ')';
+                        expandIcon.classList.toggle('rotate-180', isDesktopExpanded);
+                    }
+                }
+            }
+
+            function updateCarouselUI() {
+                const slides = getVisibleSlides();
+                const idx = getActiveSlideIndex();
+                const label = slides.length ? (idx + 1) + ' / ' + slides.length : '0 / 0';
+                if (counterMobile) counterMobile.textContent = label;
+
+                if (!carouselDots) return;
+
+                if (slides.length > 12) {
+                    const bar = carouselDots.querySelector('[data-progress-fill]');
+                    if (bar) {
+                        const pct = slides.length > 1 ? ((idx + 1) / slides.length) * 100 : 100;
+                        bar.style.width = pct + '%';
+                    }
+                } else {
+                    Array.from(carouselDots.children).forEach(function(dot, i) {
+                        const isActive = i === idx;
+                        dot.className = isActive
+                            ? 'h-1.5 w-5 rounded-full bg-terracotta transition-all cursor-pointer'
+                            : 'h-1.5 w-1.5 rounded-full bg-sandDeep hover:bg-muted transition-all cursor-pointer';
+                    });
+                }
+            }
+
+            function buildCarouselDots() {
+                if (!carouselDots) return;
+                carouselDots.innerHTML = '';
+                const slides = getVisibleSlides();
+
+                if (slides.length > 12) {
+                    const track = document.createElement('div');
+                    track.className = 'w-full h-1.5 rounded-full bg-sandDeep overflow-hidden';
+                    const fill = document.createElement('div');
+                    fill.setAttribute('data-progress-fill', 'true');
+                    fill.className = 'h-full rounded-full bg-terracotta transition-all duration-300';
+                    fill.style.width = (100 / slides.length) + '%';
+                    track.appendChild(fill);
+                    carouselDots.appendChild(track);
+                } else {
+                    slides.forEach(function(slide, i) {
+                        const dot = document.createElement('button');
+                        dot.type = 'button';
+                        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                        dot.addEventListener('click', function() {
+                            slide.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                        });
+                        carouselDots.appendChild(dot);
+                    });
+                }
+                updateCarouselUI();
+            }
+
+            function scrollCarousel(direction) {
+                if (!carousel) return;
+                const slides = getVisibleSlides();
+                if (!slides.length) return;
+                const step = slides[0].offsetWidth + 14;
+                const dirMultiplier = currentLang === 'ar' ? -1 : 1;
+                carousel.scrollBy({ left: direction * step * dirMultiplier, behavior: 'smooth' });
+            }
+
+            buildGalleryCards();
+
+            if (carousel) {
+                carousel.addEventListener('scroll', updateCarouselUI, { passive: true });
+            }
+            if (prevMobile) prevMobile.addEventListener('click', function() { scrollCarousel(-1); });
+            if (nextMobile) nextMobile.addEventListener('click', function() { scrollCarousel(1); });
+            if (expandBtn) {
+                expandBtn.addEventListener('click', function() {
+                    isDesktopExpanded = !isDesktopExpanded;
+                    updateDesktopGridLimit();
+                });
+            }
+
+            filterBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    isDesktopExpanded = false;
+
+                    filterBtns.forEach(function(b) {
+                        const active = b === btn;
+                        b.classList.toggle('active', active);
+                        b.classList.toggle('bg-cypress', active);
+                        b.classList.toggle('text-white', active);
+                        b.classList.toggle('border-cypress', active);
+                        b.classList.toggle('bg-limestone', !active);
+                        b.classList.toggle('text-muted', !active);
+                        b.classList.toggle('border-sandDeep', !active);
+                    });
+
+                    galleryCards.forEach(function(card) {
+                        const cat = card.getAttribute('data-category');
+                        card.classList.toggle('hidden', !(filter === 'all' || cat === filter));
+                    });
+
+                    if (carousel) carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                    buildCarouselDots();
+                    updateDesktopGridLimit();
+                });
+            });
+
+            buildCarouselDots();
+            updateDesktopGridLimit();
+
+            /* ==================== 5. POP-UP LIGHTBOX WITH CLOSE ICON ==================== */
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+            const lightboxCat = document.getElementById('lightboxCat');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+            const lightboxPrev = document.getElementById('lightboxPrev');
+            const lightboxNext = document.getElementById('lightboxNext');
+
+            let visibleCards = [];
+            let activeLightboxIndex = 0;
+
+            function renderLightboxSlide() {
+                const card = visibleCards[activeLightboxIndex];
+                if (!card || !lightboxImg) return;
+
+                const img = card.querySelector('img');
+                const catEl = card.querySelector('span[data-i18n]');
+                const titleEl = card.querySelector('h3');
+
+                if (img) {
+                    lightboxImg.src = img.getAttribute('src');
+                    lightboxImg.alt = img.getAttribute('alt') || '';
+                }
+                if (lightboxCounter) {
+                    lightboxCounter.textContent = (activeLightboxIndex + 1) + ' / ' + visibleCards.length;
+                }
+                if (lightboxCat) {
+                    lightboxCat.textContent = catEl ? catEl.textContent : '';
+                }
+                if (lightboxCaption) {
+                    lightboxCaption.textContent = titleEl ? titleEl.textContent : '';
+                }
+            }
+
+            window.openLightbox = function(cardEl) {
+                visibleCards = getVisibleSlides();
+                activeLightboxIndex = Math.max(0, visibleCards.indexOf(cardEl));
+                renderLightboxSlide();
+
+                if (lightbox) {
+                    lightbox.classList.remove('hidden');
+                    lightbox.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                }
+            };
+
+            function closeLightbox() {
+                if (!lightbox) return;
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+
+            function stepLightbox(delta) {
+                if (!visibleCards.length) return;
+                activeLightboxIndex = (activeLightboxIndex + delta + visibleCards.length) % visibleCards.length;
+                renderLightboxSlide();
+            }
+
+            if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+            if (lightboxPrev) lightboxPrev.addEventListener('click', function(e) { e.stopPropagation(); stepLightbox(-1); });
+            if (lightboxNext) lightboxNext.addEventListener('click', function(e) { e.stopPropagation(); stepLightbox(1); });
+
+            if (lightbox) {
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox) closeLightbox();
+                });
+
+                let touchStartX = 0;
+                lightbox.addEventListener('touchstart', function(e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+                lightbox.addEventListener('touchend', function(e) {
+                    const diff = e.changedTouches[0].screenX - touchStartX;
+                    if (Math.abs(diff) > 45) {
+                        stepLightbox(diff < 0 ? (currentLang === 'ar' ? -1 : 1) : (currentLang === 'ar' ? 1 : -1));
+                    }
+                }, { passive: true });
+            }
+
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox || lightbox.classList.contains('hidden')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') stepLightbox(currentLang === 'ar' ? 1 : -1);
+                if (e.key === 'ArrowRight') stepLightbox(currentLang === 'ar' ? -1 : 1);
+            });
+
+            /* ==================== 6. QUICK WHATSAPP BOOKING HELPER ==================== */
+            const bookingForm = document.getElementById('bookingForm');
+            const checkinInput = document.getElementById('checkinDate');
+            const checkoutInput = document.getElementById('checkoutDate');
+            const guestsSelect = document.getElementById('guestsCount');
+            const bookingNotice = document.getElementById('bookingNotice');
+
+            try {
+                const todayStr = new Date().toISOString().split('T')[0];
+                if (checkinInput) checkinInput.setAttribute('min', todayStr);
+                if (checkoutInput) checkoutInput.setAttribute('min', todayStr);
+            } catch (e) {}
+
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const checkin = checkinInput ? checkinInput.value : '';
+                    const checkout = checkoutInput ? checkoutInput.value : '';
+                    const guests = guestsSelect ? guestsSelect.value : '4';
+
+                    if (bookingNotice) {
+                        bookingNotice.classList.add('hidden');
+                        bookingNotice.textContent = '';
+                    }
+
+                    if (checkin && checkout && checkout <= checkin) {
+                        if (bookingNotice) {
+                            bookingNotice.textContent = (T[currentLang] && T[currentLang].booking_invalid_dates) || 'Invalid dates.';
+                            bookingNotice.classList.remove('hidden');
+                        }
+                        return;
+                    }
+
+                    let message = '';
+                    if (currentLang === 'ar') {
+                        message = 'مرحباً، أود الاستفسار عن حجز فيلا في ديار سالم (جربة).';
+                        if (checkin) message += '\nتاريخ الوصول: ' + checkin;
+                        if (checkout) message += '\nتاريخ المغادرة: ' + checkout;
+                        message += '\nعدد الضيوف: ' + guests;
+                    } else if (currentLang === 'en') {
+                        message = 'Hello, I would like to inquire about booking a villa at Diar Salem (Djerba).';
+                        if (checkin) message += '\nCheck-in: ' + checkin;
+                        if (checkout) message += '\nCheck-out: ' + checkout;
+                        message += '\nGuests: ' + guests;
+                    } else {
+                        message = 'Bonjour, je souhaite réserver une villa à Diar Salem (Djerba).';
+                        if (checkin) message += '\nArrivée : ' + checkin;
+                        if (checkout) message += '\nDépart : ' + checkout;
+                        message += '\nVoyageurs : ' + guests;
+                    }
+
+                    const waUrl = 'https://wa.me/216XXXXXXXX?text=' + encodeURIComponent(message);
+                    window.open(waUrl, '_blank', 'noopener');
+                });
+            }
+
+            /* ==================== 7. SCROLL REVEAL ANIMATIONS ==================== */
+            const revealEls = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+                revealEls.forEach(function(el) { observer.observe(el); });
+            } else {
+                revealEls.forEach(function(el) { el.classList.add('visible'); });
+            }
+
+            /* ==================== 8. SMOOTH ANCHOR SCROLLING ==================== */
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (!href || href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        const top = target.getBoundingClientRect().top + window.pageYOffset - 72;
+                        window.scrollTo({ top: top, behavior: 'smooth' });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
